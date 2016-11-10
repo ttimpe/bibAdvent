@@ -8,6 +8,7 @@ var ballX = 0;
 var ballY = 0;
 
 var cannonX = 0;
+var files = ['background', 'snowball', 'cannon'];
 
 var textures = [];
 
@@ -18,13 +19,11 @@ var textures = [];
 */
 
 var gameState = 0;
+loadTextures();
 
 function init() {
     document.addEventListener('keydown', keyDown);
     document.addEventListener('mousemove', mouseMove);
-    loadTexture('background');
-    loadTexture('cannon');
-    loadTexture('snowball');
     drawFrame();
 
 }
@@ -78,7 +77,7 @@ function drawBall() {
 function drawCannon() {
     var leftPosition = c.width/2 - (textures['cannon'].width/2);
 
-    ctx.drawImage(textures['cannon'], leftPosition, c.height
+    ctx.drawImage(textures['cannon'], leftPosition, c.height - textures['cannon'].height - 20);
 
 }
 function drawGUI() {
@@ -102,11 +101,16 @@ function fireSnowball() {
 
 }
 
-function loadTexture(name) {
-    var img = document.createElement('img');
-    img.src = 'images/' + name + '.png';
-    textures[name] = img;
+
+function loadTexture(index) {
+    var img = new Image();
+    img.src = 'images/' + files[index] + '.png';
+
+    img.onload = function() {
+        textures[files[index]] = img;
+        loadTexture(tIndex);
+    }
 }
 
-init();
+
 </script>
