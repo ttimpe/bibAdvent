@@ -1,6 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Changa+One" rel="stylesheet">
 <canvas id="c" width="1024" height="768">
 </canvas>
+<script src="js/Button.js"></script>
 <script>
 var c = document.getElementById('c');
 var ctx = c.getContext('2d');
@@ -31,23 +32,27 @@ var cannonAngle = 0;
 
 var objects = [];
 
-var startButton = new Button('START', c.width*0.2, 450, c.width * 0.6, 130);
-objects.push(startButton);
 
 loadTexture(0);
 
 function init() {
     document.addEventListener('keydown', keyDown);
     c.addEventListener('mousemove', mouseMove);
+    c.addEventListener('mousedown', mouseDown);
+    c.addEventListener('mouseup', mouseUp);
+    c.addEventListener('click', mouseClick);
+
+    showStartScreen();
     drawFrame();
+
 
 }
 
 function findObjectAtPosition(x, y) {
-    for (o in objects) {
+    for (var i=0; i<objects.length; i++) {
         // Check if we are on object
-        if (x >= o.x && x <= (o.x + o.width) && y >= o.y && y <= (o.y+o.height)) {
-            return o;
+        if (x >= objects[i].left && x <= (objects[i].left + objects[i].width) && y >= objects[i].top && y <= (objects[i].top+objects[i].height)) {
+            return objects[i];
         }
     }
 }
@@ -69,7 +74,43 @@ function mouseMove(e) {
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
 
+    unhoverAllObjects();
+    var hoveredObject = findObjectAtPosition(mouseX, mouseY);
+    if (hoveredObject) {
+        console.log(hoveredObject);
+        hoveredObject.state = 1;
+    }
     setCannonAngle();
+}
+
+function mouseDown(e) {
+    var rect = c.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+
+    unhoverAllObjects();
+    var hoveredObject = findObjectAtPosition(mouseX, mouseY);
+    if (hoveredObject) {
+        hoveredObject.state = 2;
+    }
+}
+
+function mouseUp(e) {
+    var rect = c.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+
+    unhoverAllObjects();
+    var hoveredObject = findObjectAtPosition(mouseX, mouseY);
+    if (hoveredObject) {
+        hoveredObject.state = 1;
+    }
+}
+function mouseClick(e) {
+    var hoveredObject = findObjectAtPosition(mouseX, mouseY);
+    if(hoveredObject) {
+        hoveredObject.click();
+    }
 }
 
 function drawFrame() {
@@ -79,22 +120,23 @@ function drawFrame() {
         drawStartScreen();
         break;
         case 1:
-        drawEnimies();
+        drawEnemies();
         drawBall();
         drawCannon();
-        drawGUI();
         break;
         case 2:
         drawEndScreen();
         break;
     }
+    drawGUI();
+
     requestAnimationFrame(drawFrame);
 }
 
 function drawBackground() {
     ctx.drawImage(textures.background,0,0);
 }
-function drawEnimies() {
+function drawEnemies() {
 
 }
 function drawBall() {
@@ -103,17 +145,18 @@ function drawBall() {
 function drawCannon() {
     // get angle
     var leftPosition = c.width/2 - (textures.cannon.width/2);
-    /*ctx.save();
-    ctx.translate(textures.cannon.width/2, textures.cannon.height);
+    ctx.save();
+    ctx.translate(-textures.cannon.width/2, -textures.cannon.height);
     ctx.rotate(cannonAngle * Math.PI/180);
     ctx.translate(textures.cannon.width/2, textures.cannon.height);
+
     ctx.drawImage(textures.cannon, -(textures.cannon.width/2), -(textures.cannon.height) , textures.cannon.width, textures.height );
     ctx.restore();
-    */
-    ctx.drawImage(textures.cannon, leftPosition, c.height - textures.cannon.height);
+
+    //ctx.drawImage(textures.cannon, leftPosition, c.height - textures.cannon.height);
 }
 function drawGUI() {
-
+    drawObjects();
 }
 
 function drawStartScreen() {
@@ -128,7 +171,6 @@ function drawStartScreen() {
     //ctx.strokeText(GAME_TITLE, c.width/2,300);
     ctx.stroke();
 
-    ctx.fillRect(c.width*0.2, 450, c.width*0.6, 130);
 }
 function drawEndScreen() {
     // Draw win or lose
@@ -141,12 +183,11 @@ function setCannonAngle() {
     // Set angle based on X position
     //console.log('width is ' + c.width + ' and mouseX is ' + mouseX);
     var percentage = mouseX / c.width  * 100;
-    if (percentage < 50) {
-        cannonAngle = -90 * percentage / 100;
-    } else {
-        cannonAngle = 90 * percentage / 100;
+    var cAngle = 180 / 100 * percentage -90;
+    if (cAngle > -45 && cAngle < 45) {
+        cannonAngle = cAngle;
     }
-    console.log('cannon angle ' + cannonAngle + ' percent');
+    console.log('cannon angle ' + cannonAngle + ' degrees');
 }
 
 function fireSnowball() {
@@ -171,20 +212,41 @@ function loadTexture(index) {
 }
 
 function drawObjects() {
-    for (var o in objects) {
-        o.draw();
+    for (var i=0; i< objects.length; i++) {
+        objects[i].draw(ctx);
+    }
+}
+
+function unhoverAllObjects() {
+    for (var i=0; i< objects.length; i++) {
+        objects[i].state = 0;
     }
 }
 
 function startGame() {
-    gameState = 1;
+    setGameState(1);
+    objects = [startButton];
+}
+
+function setGameState(i) {
+    objects = [];
+    gameState = i;
 }
 
 function showStartScreen() {
-    gameState = 0;
+    setGameState(0);
+    var startButton = new Button('START', 0, 450, c.width * 0.6, 130);
+    startButton.click = function() { alert('Button'); }
+    centerObject(startButton);
+    objects = [startButton];
+    
 }
 function showEndScreen() {
-    gameState = 2;
+    setGameState(2);
+}
+
+function centerObject(o) {
+    o.left = (c.width / 2) - (o.width / 2);
 }
 
 </script>
