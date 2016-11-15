@@ -2,6 +2,8 @@
 <canvas id="c" width="1024" height="768">
 </canvas>
 <script src="js/Button.js"></script>
+<script src="js/Snowball.js"></script>
+
 <script>
 var c = document.getElementById('c');
 var ctx = c.getContext('2d');
@@ -32,7 +34,7 @@ var cannonAngle = 0;
 
 var objects = [];
 
-
+var snowballs = [];
 loadTexture(0);
 
 function init() {
@@ -61,8 +63,10 @@ function findObjectAtPosition(x, y) {
 function keyDown(e) {
     switch (e.keyCode) {
         // FIRE SNOWBALL
-        case 20:
-
+        case 32:
+            if (gameState == 1) {
+                fireSnowball();
+            }
         break;
 
     }
@@ -121,7 +125,7 @@ function drawFrame() {
         break;
         case 1:
         drawEnemies();
-        drawBall();
+        drawSnowballs();
         drawCannon();
         break;
         case 2:
@@ -139,21 +143,21 @@ function drawBackground() {
 function drawEnemies() {
 
 }
-function drawBall() {
-    ctx.drawImage(textures.snowball,ballX,ballY);
+function drawSnowballs() {
+    for (var i = 0; i < snowballs.length; i++) {
+        ctx.drawImage(textures.snowball, snowballs[i].x - (textures.snowball.width/2), snowballs[i].y - (textures.snowball.height/2));
+    }
 }
 function drawCannon() {
     // get angle
-    var leftPosition = c.width/2 - (textures.cannon.width/2);
     ctx.save();
-    ctx.translate(-textures.cannon.width/2, -textures.cannon.height);
-    ctx.rotate(cannonAngle * Math.PI/180);
-    ctx.translate(textures.cannon.width/2, textures.cannon.height);
+    ctx.translate(c.width/2, c.height + (textures.cannon.width/2));
 
-    ctx.drawImage(textures.cannon, -(textures.cannon.width/2), -(textures.cannon.height) , textures.cannon.width, textures.height );
+
+    ctx.rotate(cannonAngle * Math.PI/180);
+    ctx.drawImage(textures.cannon,-textures.cannon.width/2, -textures.cannon.height);
     ctx.restore();
 
-    //ctx.drawImage(textures.cannon, leftPosition, c.height - textures.cannon.height);
 }
 function drawGUI() {
     drawObjects();
@@ -191,7 +195,10 @@ function setCannonAngle() {
 }
 
 function fireSnowball() {
-
+    // new snowball with position bottom center
+    var sb = new Snowball((c.width / 2) - (textures.snowball.width / 2), c.height - (textures.snowball.height/2), cannonAngle);
+    snowballs.push(sb);
+    console.log('new snowball');
 }
 
 
@@ -225,7 +232,10 @@ function unhoverAllObjects() {
 
 function startGame() {
     setGameState(1);
-    objects = [startButton];
+    // Reset snowballs
+    snowballs = [];
+
+
 }
 
 function setGameState(i) {
@@ -236,10 +246,10 @@ function setGameState(i) {
 function showStartScreen() {
     setGameState(0);
     var startButton = new Button('START', 0, 450, c.width * 0.6, 130);
-    startButton.click = function() { alert('Button'); }
+    startButton.click = startGame;
     centerObject(startButton);
     objects = [startButton];
-    
+
 }
 function showEndScreen() {
     setGameState(2);

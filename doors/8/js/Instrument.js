@@ -1,0 +1,9 @@
+class Instrument {
+    
+    constructor() {
+
+    }
+    playPattern() {
+
+    }
+}
