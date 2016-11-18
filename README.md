@@ -1,7 +1,17 @@
 b.i.b. Adventskalender
 ======================
 Bitte alle Inhalte unter /doors/\<zahl\> ablegen.
-Die Datei, welche geladen werden soll "door.php" nennen.
+Die Datei, welche geladen werden soll "door.php" heißen.
+In einer frame.json bitte anhand des folgenden Templates die Informationen zur Tür angeben:
+
+    {
+        "number": 5,
+        "content_title": "Drei Witze",
+        "content_description":"",
+        "author": "iba3h14bwi"
+    }
+
+
 
 Türen
 -----
