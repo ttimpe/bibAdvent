@@ -1,0 +1,49 @@
+body {
+    background-image: url("../images/bg1.png");
+    background-size: 1440px 1080px;
+    background-repeat: no-repeat;
+}
+html,body {
+    height: 100%; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+canvas {
+    position: absolute;
+}
+#text{
+	box-shadow: 2px 2px 10px 10px rgba(87,77,87,0.75);
+	width: 500px;
+	height: 700px;
+	border-radius: 4px;
+	background-color:gray;
+	opacity:0.8;
+	margin-left: 470px;
+	margin-top: 90px;
+    position: absolute;
+	padding: 0px 30px 0px 30px ;
+}
+#text,h1{
+	font-family: "Mountains of Christmas";
+	font-size: 36px;
+	font-style: normal;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align:center;
+}
+#text,p{
+	font-family: "Mountains of Christmas";
+	font-size: 20px;
+	font-style: italic;
+	font-variant: normal;
+	font-weight: 600;
+}
+#autor{
+	font-family: "Mountains of Christmas";
+	font-size: 12px;
+	font-style: italic;
+	position: absolute;
+    bottom: 0;
+    right: 5px;
+}
