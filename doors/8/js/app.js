@@ -30,6 +30,10 @@ function init() {
     // SET UP INSTRUMENTS
     ac = new AudioContext();
 
+    loadPattern(0);
+
+
+
 
 
 
@@ -78,6 +82,7 @@ function loadPattern(index) {
 
         } else {
             console.log('all patterns loaded');
+
         }
     });
 

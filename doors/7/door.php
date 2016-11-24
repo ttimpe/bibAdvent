@@ -3,7 +3,7 @@
 </canvas>
 <script src="js/Button.js"></script>
 <script src="js/Snowball.js"></script>
-
+<script src="js/StoneEnemy.js"></script>
 <script>
 var c = document.getElementById('c');
 var ctx = c.getContext('2d');
@@ -12,11 +12,12 @@ var ballX = 0;
 var ballY = 0;
 
 var cannonX = 0;
-var files = ['background', 'snowball', 'cannon'];
+var files = ['background', 'snowball', 'cannon', 'stoneEnemy'];
 
 var textures = [];
 
-/* STATES
+/*
+STATES
 0: STARTSCREEN
 1: INGAME
 2: ENDSCREEN
@@ -35,6 +36,8 @@ var cannonAngle = 0;
 var objects = [];
 
 var snowballs = [];
+var enemies = [];
+
 loadTexture(0);
 
 function init() {
@@ -141,19 +144,24 @@ function drawBackground() {
     ctx.drawImage(textures.background,0,0);
 }
 function drawEnemies() {
-
+    for (var i = 0; i < enemies.length; i++) {
+        enemies[i].draw(ctx);
+    }
 }
 function drawSnowballs() {
     for (var i = 0; i < snowballs.length; i++) {
-        ctx.drawImage(textures.snowball, snowballs[i].x - (textures.snowball.width/2), snowballs[i].y - (textures.snowball.height/2));
+        snowballs[i].draw(ctx);
     }
 }
+
+
+
+
+
 function drawCannon() {
     // get angle
     ctx.save();
     ctx.translate(c.width/2, c.height + (textures.cannon.width/2));
-
-
     ctx.rotate(cannonAngle * Math.PI/180);
     ctx.drawImage(textures.cannon,-textures.cannon.width/2, -textures.cannon.height);
     ctx.restore();
@@ -191,13 +199,14 @@ function setCannonAngle() {
     if (cAngle > -45 && cAngle < 45) {
         cannonAngle = cAngle;
     }
-    console.log('cannon angle ' + cannonAngle + ' degrees');
+    // console.log('cannon angle ' + cannonAngle + ' degrees');
 }
 
 function fireSnowball() {
     // new snowball with position bottom center
-    var sb = new Snowball((c.width / 2) - (textures.snowball.width / 2), c.height - (textures.snowball.height/2), cannonAngle);
+    var sb = new Snowball((c.width / 2) - (textures.snowball.width / 2), c.height - (textures.snowball.height/2), cannonAngle+90);
     snowballs.push(sb);
+    sb.fire();
     console.log('new snowball');
 }
 
@@ -234,8 +243,7 @@ function startGame() {
     setGameState(1);
     // Reset snowballs
     snowballs = [];
-
-
+    enemies = [new StoneEnemy()];
 }
 
 function setGameState(i) {

@@ -1,7 +1,7 @@
 class Instrument {
 
     constructor(track) {
-        this.currentPattern = [];
+        this.currentPattern;
         this.track = track;
         this.oscs = [];
         this.timer = null;

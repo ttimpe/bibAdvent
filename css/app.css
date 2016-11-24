@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'mountains_of_christmasbold';
+    src: url('../fonts/mountainsofchristmas-bold-webfont.woff2') format('woff2'),
+         url('../fonts/mountainsofchristmas-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'mountains_of_christmasregular';
+    src: url('../fonts/mountainsofchristmas-regular-webfont.woff2') format('woff2'),
+         url('../fonts/mountainsofchristmas-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+html {
+    font-family: 'mountains_of_christmasregular';
+    background-image: url('../images/background.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#doors {
+    list-style: none;
+}
+
+#doors li {
+    width: 50px;
+    height: 50px;
+    padding: 30px;
+    display:block;
+    float:left;
+    font-size: 50pt;
+    font-weight: bold;
+    line-height: 50pt;
+    text-align: center;
+    -webkit-user-select:none;
+    user-select:none;
+    cursor:pointer;
+    border: 1px dashed #fff;
+    color: #fff;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+    margin: 50px;
+    text-shadow: 0 0 1px #000;
+    transition: 0.2s;
+}
+
+.door:hover {
+    background: rgba(0,0,0,0.4);
+
+}
+#door-content {
+    position: absolute;
+    transition: 2s;
+
+}
+body.covered {
+    transition: 2s;
+    background-color: rgba(0,0,0,0.4);
+}

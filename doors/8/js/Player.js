@@ -23,6 +23,7 @@ class Player {
             for (var i=0; i<that.song.instruments.length; i++) {
                 switch (that.song.instruments[i].type) {
                     case 'drums':
+                    var track;
                     var inst = new DrumMachine();
                     track = new Track('Drums', inst);
                     mixer.addTrack(track);
