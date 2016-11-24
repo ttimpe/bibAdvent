@@ -1,0 +1,10 @@
+{
+    "bpm": 101,
+    "instruments": [
+        {
+            "type":"drums",
+            "patterns": ["drums_main"]
+        }
+    ]
+
+}

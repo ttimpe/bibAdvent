@@ -1,9 +1,19 @@
 class Instrument {
-    
-    constructor() {
+
+    constructor(track) {
+        this.currentPattern = [];
+        this.track = track;
+        this.oscs = [];
+        this.timer = null;
 
     }
-    playPattern() {
+    play() {
 
     }
+    stop() {
+        this.oscs = null;
+        clearInterval(this.timer);
+    }
+
+
 }
