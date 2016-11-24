@@ -7,7 +7,7 @@
 		<h3>Zum 5. Dezember gibt es drei Witze:</h3>
 
 		<p>
-			Meine Freundin <span title="schrie" style="background-image: url(http://www.javascriptspellcheck.com/JavaScriptSpellCheck/themes/modern/wiggle.png);background-repeat: repeat-x;background-position: bottom;">schreite</span> mich heute an: „Du hast mir gerade nicht mal zugehört, oder?!”
+			Meine Freundin schrie mich heute an: „Du hast mir gerade nicht mal zugehört, oder?!”
 			Ich dachte mir nur: „Was ein merkwürdiger Weg, ein Gespräch zu beginnen…”
 		</p>
 
