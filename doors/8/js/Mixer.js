@@ -19,6 +19,13 @@ class Mixer {
         trackSection.appendChild(trackMuteCheckbox);
         trackSection.appendChild(trackLabel);
 
+
+        var panKnob = document.createElement('input');
+        panKnob.setAttribute('class', 'panKnob');
+        panKnob.setAttribute('type', 'knob');
+        trackSection.appendChild(panKnob);
+
+
         this.div.appendChild(trackSection);
 
 

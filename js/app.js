@@ -1,3 +1,4 @@
+var openedDoor = 0;
 $(document).ready(function() {
     for (var i=1; i<25; i++)  {
         var d = new Date('2016-11-' + i);
@@ -11,33 +12,50 @@ $(document).ready(function() {
     }
     $("#doors li.unlocked").click(function (e) {
         openDoor($(this).data('did'));
+
+    });
+    $("#doors li.unlocked").hover(function (e) {
+        positionIFrame($(this).data('did'));
+
     });
 
 });
 
-function openDoor(i) {
-    console.log('opening');
+
+
+function positionIFrame(i) {
     var t = $('.door[data-did=' + i +']')[0].offsetTop;
     var l = $('.door[data-did=' + i +']')[0].offsetLeft;
-    var w = $('.door[data-did=' + i +']')[0].offsetWidth;
-    var h = $('.door[data-did=' + i +']')[0].offsetHeight;
     console.log('position at x ' + l + 'px, y ' + t + 'px');
 
     $('#door-content').css('top', t + 'px');
     $('#door-content').css('left', l + 'px');
-    $('#door-content').css('width', w + 'px');
-    $('#door-content').css('height', h + 'px');
+
+}
+
+function openDoor(i) {
+    console.log('opening');
 
 
     $('#door-content').attr('src','api.php?action=openDoor&day='+i);
+    $('#door-content').addClass('opened');
 
-    $('#door-content').css('width', '1024px');
-    $('#door-content').css('height', '768px');
-    $('#door-content').css('left', '50%');
-    $('#door-content').css('top', '50%');
-    $('#door-content').css('margin-left', '-512px');
-    $('#door-content').css('margin-top', '-384px');
+    openedDoor = i;
 
     $('body').addClass('covered');
+    $('body.covered').click (function(e) {
+        if (e.target == document.body) {
+            closeDoor();
+        }
+    });
+
+}
+
+
+
+function closeDoor() {
+    console.log('closing door');
+    $('#door-content').removeClass('opened');
+    $('body').removeClass('covered');
 
 }

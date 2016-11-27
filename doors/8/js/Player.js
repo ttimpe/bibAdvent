@@ -25,7 +25,23 @@ class Player {
                     case 'drums':
                     var track;
                     var inst = new DrumMachine();
+                    inst.currentPattern = allPatterns[that.song.instruments[i].patterns[0]];
+                    var patternName = that.song.instruments[i].patterns[0];
+                    console.log('setting drum pattern to ' + patternName)
+                    console.log(allPatterns);
+                    console.log(allPatterns[patternName]);
                     track = new Track('Drums', inst);
+                    mixer.addTrack(track);
+                    break;
+                    case 'bass':
+                    var track;
+                    var inst = new Bass();
+                    inst.currentPattern = allPatterns[that.song.instruments[i].patterns[0]];
+                    var patternName = that.song.instruments[i].patterns[0];
+                    console.log('setting drum pattern to ' + patternName)
+                    console.log(allPatterns);
+                    console.log(allPatterns[patternName]);
+                    track = new Track('Bass', inst);
                     mixer.addTrack(track);
                     break;
                 }

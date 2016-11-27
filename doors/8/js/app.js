@@ -19,9 +19,9 @@ function init() {
     masterFader = document.getElementById('masterFader');
 
 
-    playButton.addEventListener('onclick', onPlay);
-    playButton.addEventListener('onclick', onStop);
-    playButton.addEventListener('onchange', onMasterVolumeChange);
+    playButton.addEventListener('click', onPlay);
+    stopButton.addEventListener('click', onStop);
+    masterFader.addEventListener('change', onMasterVolumeChange);
 
     mixer = new Mixer(document.getElementById('mixer-container'));
     player = new Player();
@@ -32,7 +32,7 @@ function init() {
 
     loadPattern(0);
 
-
+    noiseBuffer = ac.createBuffer(1, 44100, 44100);  // 44100 is a standard sample rate for most sound cards
 
 
 
@@ -47,9 +47,10 @@ function onPlay() {
 
 }
 function onStop() {
+    console.log('Hit Stop');
     player.stop();
-
 }
+
 function onMasterVolumeChange(e) {
     mixer.masterFaderPosition = this.value;
 }
@@ -82,6 +83,7 @@ function loadPattern(index) {
 
         } else {
             console.log('all patterns loaded');
+            player.loadSong();
 
         }
     });

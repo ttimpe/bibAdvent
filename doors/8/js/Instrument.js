@@ -11,6 +11,7 @@ class Instrument {
 
     }
     stop() {
+        console.log('Stopping');
         this.oscs = null;
         clearInterval(this.timer);
     }

@@ -4,6 +4,10 @@
         {
             "type":"drums",
             "patterns": ["drums_main"]
+        },
+        {
+            "type": "bass",
+            "patterns": ["bass_main"]
         }
     ]
 

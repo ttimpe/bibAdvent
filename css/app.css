@@ -60,10 +60,25 @@ html {
 }
 #door-content {
     position: absolute;
-    transition: 2s;
+    width: 110px;
+    height: 110px;
 
 }
-body.covered {
+#door-content.opened {
+    background: white;
+    width: 1024px;
+    height: 768px;
+    left: 50% !important;
+    margin-left: -512px;
+    margin-top: -384px;
+    top: 50% !important;
     transition: 2s;
+
+
+}
+
+
+
+.covered {
     background-color: rgba(0,0,0,0.4);
 }
