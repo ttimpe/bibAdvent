@@ -1,7 +1,7 @@
 {
     "bpm": 101,
     "instruments": [
-
+        
         {
             "type": "synth",
             "patterns": ["synth_main"]
