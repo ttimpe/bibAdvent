@@ -1,0 +1,71 @@
+html{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	background-image: url('wallpaper.jpg');
+}
+
+
+#schneekugel img{
+	display: block;
+    height: 30rem;
+    width: 30em;
+    position: fixed;
+    bottom: 0.01px;
+    left: calc(50% - 15em);
+}
+
+#kugel{
+	    background-color: rgba(0,0,0,0) !important;
+    background-image: url(schnee1.png),url(schnee2.png),url(schnee3.png);
+    -webkit-animation: schnee 25s linear infinite;
+    -moz-animation: schnee 25s linear infinite;
+    -ms-animation: schnee 25s linear infinite;
+    animation: schnee 25s linear infinite;
+    height: 27.66em;
+    width: 27.6em;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 34px;
+    left: calc(50% - 13.8em);
+}
+
+@keyframes schnee{
+	0%{
+		background-position:0px 0px,0px 0px,0px 0px
+	}
+	100%{
+		background-position:500px 1000px,400px 400px,300px 300px
+	}
+}
+
+@-moz-keyframes schnee{
+	0%{
+		background-position:0px 0px,0px 0px,0px 0px
+	}
+	100%{
+		background-position:500px 1000px,400px 400px,300px 300px
+		}
+}
+
+@-webkit-keyframes schnee{
+	0%{
+		background-position:0px 0px,0px 0px,0px 0px
+	}
+	100%{
+		background-position:500px 1000px,400px 400px,300px 300px;
+	}
+}
+
+@-ms-keyframes schnee{
+	0%{
+		background-position:0px 0px,0px 0px,0px 0px
+	}
+	100%{
+		background-position:500px 1000px,400px 400px,300px 300px
+	}
+}
