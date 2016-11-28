@@ -38,10 +38,32 @@ class Player {
                     var inst = new Bass();
                     inst.currentPattern = allPatterns[that.song.instruments[i].patterns[0]];
                     var patternName = that.song.instruments[i].patterns[0];
-                    console.log('setting drum pattern to ' + patternName)
+                    console.log('setting bass pattern to ' + patternName)
                     console.log(allPatterns);
                     console.log(allPatterns[patternName]);
                     track = new Track('Bass', inst);
+                    mixer.addTrack(track);
+                    break;
+                    case 'bells':
+                    var track;
+                    var inst = new BellSynth();
+                    inst.currentPattern = allPatterns[that.song.instruments[i].patterns[0]];
+                    var patternName = that.song.instruments[i].patterns[0];
+                    console.log('setting bells pattern to ' + patternName)
+                    console.log(allPatterns);
+                    console.log(allPatterns[patternName]);
+                    track = new Track('Bells', inst);
+                    mixer.addTrack(track);
+                    break;
+                    case 'synth':
+                    var track;
+                    var inst = new LeadSynth();
+                    inst.currentPattern = allPatterns[that.song.instruments[i].patterns[0]];
+                    var patternName = that.song.instruments[i].patterns[0];
+                    console.log('setting synth pattern to ' + patternName)
+                    console.log(allPatterns);
+                    console.log(allPatterns[patternName]);
+                    track = new Track('Synth', inst);
                     mixer.addTrack(track);
                     break;
                 }

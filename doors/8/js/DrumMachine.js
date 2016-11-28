@@ -1,11 +1,36 @@
 class DrumMachine extends Instrument {
 
     play() {
+
         console.log('Drum machine playing');
         var currentStep = 0;
         console.log(this.currentPattern);
         var inst = this;
         console.log('interval ' +  1/(player.BPM/60*4));
+        this.oscs= [];
+        //console.log('step ' + currentStep);
+        if (inst.currentPattern['bd'][currentStep] == 1) {
+            inst.playKick();
+        }
+        if (inst.currentPattern['snare'][currentStep] == 1) {
+            inst.playSnare();
+        }
+        if (inst.currentPattern['ch'][currentStep] == 1) {
+            inst.playClosedHH();
+        }
+        if (inst.currentPattern['oh'][currentStep] == 1) {
+            inst.playOpenHH();
+        }
+        if (inst.currentPattern['cymbal'][currentStep] == 1) {
+            inst.playCymbal();
+        }
+
+        if (currentStep < 15) {
+            currentStep++;
+        } else {
+            currentStep = 0;
+        }
+
         this.timer = window.setInterval(function() {
             this.oscs= [];
             //console.log('step ' + currentStep);
@@ -16,13 +41,13 @@ class DrumMachine extends Instrument {
                 inst.playSnare();
             }
             if (inst.currentPattern['ch'][currentStep] == 1) {
-                playClosedHH();
+                inst.playClosedHH();
             }
             if (inst.currentPattern['oh'][currentStep] == 1) {
-                playOpenHH();
+                inst.playOpenHH();
             }
             if (inst.currentPattern['cymbal'][currentStep] == 1) {
-                playCymbal();
+                inst.playCymbal();
             }
 
             if (currentStep < 15) {
@@ -31,6 +56,7 @@ class DrumMachine extends Instrument {
                 currentStep = 0;
             }
         }, 1/(player.BPM/60*4) * 1000);
+
     }
 
 
@@ -39,7 +65,7 @@ class DrumMachine extends Instrument {
     playKick() {
         console.log('kick');
         var osc = ac.createOscillator();
-        osc.frequency.value = 80;
+        osc.frequency.value = 150;
         var g = ac.createGain();
         osc.connect(g);
         g.connect(ac.destination);

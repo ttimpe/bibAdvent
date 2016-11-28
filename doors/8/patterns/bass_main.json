@@ -249,32 +249,47 @@
     },
     {
         "note": 19,
+        "start": 6.25,
+        "length": 0.0625
+    },
+    {
+        "note": 19,
         "start": 6.375,
         "length": 0.0625
     },
     {
         "note": 19,
         "start": 6.5,
+        "length": 0.125
+    },
+    {
+        "note": 19,
+        "start": 6.75,
         "length": 0.0625
     },
     {
         "note": 19,
-        "start": 6.625,
-        "length": 0.125
+        "start": 6.875,
+        "length": 0.0625
     },
     {
         "note": 19,
         "start": 7,
-        "length": 0.0625
-    },
-    {
-        "note": 19,
-        "start": 7.25,
-        "length": 0.0625
-    },
-    {
-        "note": 19,
-        "start": 7.375,
         "length": 0.125
+    },
+    {
+        "note": 21,
+        "start": 7.25,
+        "length": 0.125
+    },
+    {
+        "note": 23,
+        "start": 7.5,
+        "length": 0.125
+    },
+    {
+        "note": 26,
+        "start": 7.75,
+        "length": 0.25
     }
 ]

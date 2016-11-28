@@ -1,0 +1,53 @@
+[
+    {
+        "note": 56,
+        "start": 0,
+        "length": 0.125
+    },
+    {
+        "note": 56,
+        "start": 0.25,
+        "length": 0.0625
+    },
+    {
+        "note": 56,
+        "start": 0.375,
+        "length": 0.125
+    },
+    {
+        "note": 54,
+        "start": 0.5,
+        "length": 0.125
+    },
+    {
+        "note": 49,
+        "start": 0.75,
+        "length": 0.0625
+    },
+    {
+        "note": 49,
+        "start": 0.875,
+        "length": 0.125
+    },
+    {
+        "note": 56,
+        "start": 1,
+        "length": 0.0625
+    },
+    {
+        "note": 56,
+        "start": 1.125,
+        "length": 0.0625
+    },
+    {
+        "note": 58,
+        "start": 1.25,
+        "length": 0.0625
+    },
+    {
+        "note": 54,
+        "start": 1.375,
+        "length": 0.0625
+    }
+
+]

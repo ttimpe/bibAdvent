@@ -1,8 +1,20 @@
 class Bass extends Instrument {
     play() {
-        for (var i = 0; i<this.currentPattern.length; i++) {
-            this.playNote(this.currentPattern[i]);
+        var lastNote = this.currentPattern[this.currentPattern.length-1];
+        var barLength = 60/player.BPM * 4;
+        var patternLength = (lastNote.start*barLength) + (lastNote.length*barLength);
+
+        console.log('Pattern is ' + patternLength + 'seconds long');
+        var inst = this;
+        for (var i = 0; i<inst.currentPattern.length; i++) {
+            inst.playNote(inst.currentPattern[i]);
         }
+        this.timer = setInterval(function () {
+            for (var i = 0; i<inst.currentPattern.length; i++) {
+                inst.playNote(inst.currentPattern[i]);
+            }
+        }, patternLength * 1000);
+
 
     }
 
@@ -13,8 +25,9 @@ class Bass extends Instrument {
         console.log('freq is ' + freq);
         var osc = ac.createOscillator();
         osc.frequency.value = freq;
+        var barLength = 60/player.BPM * 4;
         osc.connect(ac.destination);
-        osc.start(ac.currentTime + (1/(player.BPM/60*0.25*n.start)));
-        osc.stop(ac.currentTime +  (1/(player.BPM/60*0.25*n.start)) + (1/(player.song.BPM/60*0.25*n.length)));
+        osc.start(ac.currentTime + (n.start*barLength));
+        osc.stop(ac.currentTime + (n.start*barLength) + (n.length*barLength));
     }
 }
