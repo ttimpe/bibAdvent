@@ -23,12 +23,14 @@ function init() {
     stopButton.addEventListener('click', onStop);
     masterFader.addEventListener('change', onMasterVolumeChange);
 
+
+        // SET UP INSTRUMENTS
+        ac = new AudioContext();
+
     mixer = new Mixer(document.getElementById('mixer-container'));
     player = new Player();
 
 
-    // SET UP INSTRUMENTS
-    ac = new AudioContext();
 
     loadPattern(0);
 
@@ -52,7 +54,7 @@ function onStop() {
 }
 
 function onMasterVolumeChange(e) {
-    mixer.masterFaderPosition = this.value;
+    mixer.masterVolume.gain.value = masterFader.value / 100;
 }
 
 var getJSON = function(url, callback) {

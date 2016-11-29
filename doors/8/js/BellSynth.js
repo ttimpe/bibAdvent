@@ -9,7 +9,7 @@ class BellSynth extends Instrument {
         for (var i = 0; i<inst.currentPattern.length; i++) {
             inst.playNote(inst.currentPattern[i]);
         }
-        
+
 
     }
     playNote(n) {
@@ -19,7 +19,7 @@ class BellSynth extends Instrument {
         var osc = ac.createOscillator();
         osc.frequency.value = freq;
         var barLength = 60/player.BPM * 4;
-        osc.connect(ac.destination);
+        osc.connect(this.volume);
         osc.start(ac.currentTime + (n.start*barLength));
         osc.stop(ac.currentTime + (n.start*barLength) + (n.length*barLength));
     }

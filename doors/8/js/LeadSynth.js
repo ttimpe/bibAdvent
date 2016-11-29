@@ -9,7 +9,11 @@ class LeadSynth extends Instrument {
         for (var i = 0; i<inst.currentPattern.length; i++) {
             inst.playNote(inst.currentPattern[i]);
         }
-
+        this.timer = setInterval(function () {
+            for (var i = 0; i<inst.currentPattern.length; i++) {
+                inst.playNote(inst.currentPattern[i]);
+            }
+        }, patternLength * 1000);
 
     }
     playNote(n) {
@@ -32,7 +36,7 @@ class LeadSynth extends Instrument {
         g.gain.setValueAtTime(0.1, (n.start*barLength) + (n.length*barLength) - 0.05);
         g.gain.linearRampToValueAtTime(0, (n.start*barLength) + (n.length*barLength));
 
-        g.connect(ac.destination);
+        g.connect(this.volume);
 
         osc2.connect(g);
         osc2.start(ac.currentTime + (n.start*barLength));

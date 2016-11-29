@@ -3,20 +3,23 @@
     "instruments": [
 
         {
-            "type": "synth",
-            "patterns": ["synth_main"]
-        },
-        {
             "type": "bass",
             "patterns": ["bass_main"]
         },
+
         {
             "type": "bells",
             "patterns": ["bells_main"]
         },
+
         {
             "type": "drums",
             "patterns": ["drums_main"]
+
+        },
+        {
+            "type": "synth",
+            "patterns": ["synth_main"]
         }
     ]
 

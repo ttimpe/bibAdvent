@@ -65,10 +65,10 @@ class DrumMachine extends Instrument {
     playKick() {
         console.log('kick');
         var osc = ac.createOscillator();
-        osc.frequency.value = 150;
+        osc.frequency.value = 200;
         var g = ac.createGain();
         osc.connect(g);
-        g.connect(ac.destination);
+        g.connect(this.volume);
 
         var now = ac.currentTime;
         osc.start(now);
@@ -90,12 +90,12 @@ class DrumMachine extends Instrument {
        noise.connect(noiseFilter);
        var noiseEnvelope = ac.createGain();
        noiseFilter.connect(noiseEnvelope);
-       noiseEnvelope.connect(ac.destination);
+       noiseEnvelope.connect(this.volume);
        var osc = ac.createOscillator();
        osc.type = 'triangle';
        var oscEnvelope = ac.createGain();
        osc.connect(oscEnvelope);
-       oscEnvelope.connect(ac.destination);
+       oscEnvelope.connect(this.volume);
        noiseEnvelope.gain.setValueAtTime(1, time);
        noiseEnvelope.gain.exponentialRampToValueAtTime(0.01, time + 0.2);
        noise.start(time);
@@ -112,7 +112,7 @@ class DrumMachine extends Instrument {
         var noise = ac.createBufferSource();
         noise.buffer = noiseBuffer;
 var noiseEnvelope = ac.createGain();
-noiseEnvelope.connect(ac.destination);
+noiseEnvelope.connect(this.volume);
 noiseEnvelope.gain.setValueAtTime(0.7, ac.currentTime);
 noiseEnvelope.gain.exponentialRampToValueAtTime(0.5, ac.currentTime + 0.05);
 noiseEnvelope.gain.exponentialRampToValueAtTime(0.01, ac.currentTime + 0.1);

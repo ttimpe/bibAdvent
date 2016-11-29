@@ -5,6 +5,7 @@ class Instrument {
         this.track = track;
         this.oscs = [];
         this.timer = null;
+        this.volume = ac.createGain();
 
     }
     play() {

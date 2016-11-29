@@ -8,6 +8,9 @@ input[type=range][orient=vertical]
 }
 #mixer-container {
     background: #232323;
+    color: #fff;
+    font-family: sans-serif;
+    text-transform: uppercase;
 }
 /*
 input[type=range]::-webkit-slider-thumb {
