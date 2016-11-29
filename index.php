@@ -10,6 +10,9 @@
             <ul id="doors">
             </ul>
         </main>
+        <footer>
+            <p>Ein Projekt der IBA3H14B</p>
+        </footer>
         <iframe id="door-content"></iframe>
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="js/app.js"></script>

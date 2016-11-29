@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+    <main class="rack">
 <div id="mixer-container">
-    <input type="range" id="masterFader" orient="vertical" value="80">
+    <section class="track master-track">
+        <span class="fader-knob"></span>
+    <input type="range" id="masterFader" class="fader" orient="vertical" value="80">
+    </div>
 </div>
 <div id="player-container">
-    <button type="button" id="playButton">PLAY</button>
-    <button type="button" id="stopButton">STOP</button>
+    <button type="button" id="playButton">&#9654;</button>
+    <button type="button" id="stopButton">&#9632;</button>
 </div>
-
+</main>
 <script src="js/Instrument.js"></script>
 <script src="js/DrumMachine.js"></script>
 <script src="js/Bass.js"></script>

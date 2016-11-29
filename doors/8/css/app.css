@@ -1,66 +1,178 @@
-input[type=range][orient=vertical]
+* { margin: 0; padding:0;}
+
+.rack {
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    top: 50%;
+    left: 50%;
+    margin-top: -384px;
+    margin-left: -512px;
+    background: #161616;
+}
+
+.rack>div {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    min-height: 128px;
+    width: 880px;
+    margin: 0 auto;
+    padding: 0 72px;
+}
+
+input[type=range]
 {
     writing-mode: bt-lr; /* IE */
     -webkit-appearance: slider-vertical; /* WebKit */
-    width: 8px;
+    width: 16px;
     height: 175px;
     padding: 0 5px;
+    background: rgba(0,0,0,0);
+    position: relative;
+
 }
 #mixer-container {
-    background: #232323;
+    background: linear-gradient(#55535A,#3F3F43);
     color: #fff;
     font-family: sans-serif;
     text-transform: uppercase;
+    height: 256px;
 }
-/*
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: 1px solid #000000;
-    height: 34px;
-    width: 16px;
-    border-radius: 3px;
-    background: #ffffff;
-    cursor: pointer;
-    margin-top: -14px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+
+.track {
+    width: 150px;
+    float:left;
+    position: relative;
+    border-left: 1px solid #222;
+    height: 100%;
 
 }
-*/
-input[type=range]::-moz-range-thumb {
-  height: 30px;
-  width: 16px;
-  background: linear-gradient(#d5d5d5 1px,
-                              #d4d4d4 2px,
-                              #bebebe 3px,
-                              #c5c5c5 4px,
-                              #9a9a9a 5px,
-                              #616161 6px,
-                              #696969 7px,
-                              #858585 8px,
-                              #909090 9px,
-                              #8c8c8c 10px,
-                              #8a8a8a 11px,
-                              #9c9c9c,12px,
-                              #b8b8b8 13px,
-                              #c9c9c9 14px,
-                              #bbbbbb 15px,
-                              #313131 16px,
-                              #c5c5c5 17px,
-                              #cecece 18px,
-                              #aaaaaa 19px,
-                              #b0b0b0 20px,
-                              #cccccc 21px,
-                              #b0b0b0 22px,
-                              #aeaeae 23px,
-                              #d1d1d1 24px,
-                              #b9b9b9 25px,
-                              #818181 26px,
-                              #6a6a6a 27px,
-                              #686868 28px,
-                              #676767 29px,
-                              #3f3f3f 30px,
-                              #000);
-  cursor: pointer;
-  border-radius: 0;
-  border:0;
+
+.track-label {
+    color: black;
+    width: 100%;
+    background: linear-gradient(#EADEAE, #CDBA80);
+    font-family: 'Comic Sans MS';
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    padding: 5px 0;
+    text-align: center;
+
+}
+
+.fader {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+}
+
+.fader-knob {
+    height: 30px;
+    width: 16px;
+    background: linear-gradient(#d5d5d5 1px,
+                                #d4d4d4 2px,
+                                #bebebe 3px,
+                                #c5c5c5 4px,
+                                #9a9a9a 5px,
+                                #616161 6px,
+                                #696969 7px,
+                                #858585 8px,
+                                #909090 9px,
+                                #8c8c8c 10px,
+                                #8a8a8a 11px,
+                                #9c9c9c,12px,
+                                #b8b8b8 13px,
+                                #c9c9c9 14px,
+                                #bbbbbb 15px,
+                                #313131 16px,
+                                #c5c5c5 17px,
+                                #cecece 18px,
+                                #aaaaaa 19px,
+                                #b0b0b0 20px,
+                                #cccccc 21px,
+                                #b0b0b0 22px,
+                                #aeaeae 23px,
+                                #d1d1d1 24px,
+                                #b9b9b9 25px,
+                                #818181 26px,
+                                #6a6a6a 27px,
+                                #686868 28px,
+                                #676767 29px,
+                                #3f3f3f 30px,
+                                #000);
+    cursor: pointer;
+    border-radius: 0;
+    border:0;
+    display: block;
+    bottom:80%;
+    left: 32px;
+    position: absolute;
+    z-index: 20;
+
+}
+
+.fader::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: transparent;
+}
+.fader::-webkit-runnable-track {
+    background: black;
+    z-index: 10;
+}
+
+
+.fader::-moz-slider-thumb {
+    -webkit-appearance: none;
+    background: transparent;
+}
+.fader::-moz-runnable-track {
+    background: black;
+    z-index: 10;
+}
+
+
+
+
+.mute-button {
+    width: 60px;
+    height: 24px;
+    border-radius: 0;
+    background: #FEFEF7;
+    position: absolute;
+    bottom: 55px;
+    right: 20px;
+
+}
+.mute-button.muted {
+    background: radial-gradient(circle, #C5B3A4,#FEFEF7 );
+
+}
+
+#player-container {
+    background: linear-gradient(#222, #000);
+}
+#player-container button {
+    height: 64px;
+    width: 64px;
+    margin: 10px;
+    font-family: 'Arial';
+    background: radial-gradient(circle, grey, #ccc);
+    border-radius: 0;
+    position: absolute;
+
+}
+
+#player-container #playButton {
+    font-size: 30px;
+    left: 60px;
+
+
+}
+#player-container #stopButton {
+    font-size: 60px;
+    left: 130px;
 }
