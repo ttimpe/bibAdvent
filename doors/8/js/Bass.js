@@ -23,11 +23,23 @@ class Bass extends Instrument {
         var tot = 1.0594630943592953;
         var freq = Math.pow(tot, n.note-49) * 440;
         console.log('freq is ' + freq);
-        var osc = ac.createOscillator();
-        osc.frequency.value = freq;
         var barLength = 60/player.BPM * 4;
-        osc.connect(ac.destination);
-        osc.start(ac.currentTime + (n.start*barLength));
-        osc.stop(ac.currentTime + (n.start*barLength) + (n.length*barLength));
+
+        var osc1 = ac.createOscillator();
+        osc1.frequency.value = freq;
+        osc1.detune.value = 10;
+
+        osc1.connect(ac.destination);
+
+        var osc2 = ac.createOscillator();
+        osc2.frequency.value = freq;
+        osc2.type='triangle';
+        osc2.detune.value = -10;
+        osc2.connect(ac.destination);
+
+        osc1.start(ac.currentTime + (n.start*barLength));
+        osc1.stop(ac.currentTime + (n.start*barLength) + (n.length*barLength));
+        osc2.start(ac.currentTime + (n.start*barLength));
+        osc2.stop(ac.currentTime + (n.start*barLength) + (n.length*barLength));
     }
 }
