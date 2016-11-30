@@ -13,7 +13,9 @@
         <footer>
             <p>Ein Projekt der IBA3H14B</p>
         </footer>
+        <div id="frame-wrapper">
         <iframe id="door-content"></iframe>
+        </div>
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="js/app.js"></script>
     </body>

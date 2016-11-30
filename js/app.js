@@ -26,7 +26,7 @@ function openDoor(i) {
 
 
     $('#door-content').attr('src','api.php?action=openDoor&day='+i);
-    $('#door-content').addClass('opened');
+    $('#frame-wrapper').addClass('opened');
 
     openedDoor = i;
 
@@ -43,10 +43,10 @@ function openDoor(i) {
 
 function closeDoor() {
     console.log('closing door');
-    $('#door-content').removeClass('opened');
-    $('#door-content').addClass('closed');
+    $('#frame-wrapper').removeClass('opened');
+    $('#frame-wrapper').addClass('closed');
     window.setTimeout(function() {
-        $('#door-content').removeClass('closed');
+        $('#frame-wrapper').removeClass('closed');
     },1000);
 
     $('body').removeClass('covered');
