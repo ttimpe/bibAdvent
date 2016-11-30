@@ -14,24 +14,12 @@ $(document).ready(function() {
         openDoor($(this).data('did'));
 
     });
-    $("#doors li.unlocked").hover(function (e) {
-        positionIFrame($(this).data('did'));
 
-    });
 
 });
 
 
 
-function positionIFrame(i) {
-    var t = $('.door[data-did=' + i +']')[0].offsetTop;
-    var l = $('.door[data-did=' + i +']')[0].offsetLeft;
-    console.log('position at x ' + l + 'px, y ' + t + 'px');
-
-    $('#door-content').css('top', t + 'px');
-    $('#door-content').css('left', l + 'px');
-
-}
 
 function openDoor(i) {
     console.log('opening');

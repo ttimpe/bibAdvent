@@ -60,11 +60,6 @@ html {
 }
 #door-content {
     position: absolute;
-    width: 110px;
-    height: 110px;
-
-}
-#door-content.opened {
     background: white;
     width: 1024px;
     height: 768px;
@@ -75,8 +70,13 @@ html {
     transition: 2s;
     border: 40px solid #476C2B;
     border-radius: 5px;
+    display: none;
 
-
+}
+#door-content.opened {
+    display:block;
+    opacity: 1;
+    animation: 0.2s linear fadeIn;
 }
 
 
@@ -99,4 +99,12 @@ footer {
 }
 footer p {
     text-align: center;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    },
+    100% {
+        opacity: 1;
+    }
 }
