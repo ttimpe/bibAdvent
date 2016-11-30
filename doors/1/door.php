@@ -41,29 +41,31 @@ body{
 
 	}
 	#ecke{
-	width:100%;
-	height:100%;
-  border:1px solid grey;
+	  width: 100%;
+	  height: auto;
+      border: 1px solid grey;
 	}
   .beispiel{
-    display:flex;
-    width:30%;
-    height:100%;
+    display: flex;
+    width: 30%;
+    height: 100%;
     flex-direction: column;
   }
-  h3{
+  h3 {
     margin:0;
-    text-align: center }
+    text-align: center; }
 
 @media screen and (max-height:640px){
-  body{
+  body {
     flex-direction: column;
   }
-  table{
-    width:98vw;
+  
+  table {
+    width: 98vw;
   }
-  #Zubereitung{
-    width:100vw;
+  
+  #Zubereitung {
+    width: 100vw;
   }
 }
 
