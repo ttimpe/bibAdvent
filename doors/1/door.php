@@ -1,3 +1,7 @@
+<?php
+define('DOOR', 1);
+include(dirname(__DIR__).'../../verify.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -59,11 +63,11 @@ body{
   body {
     flex-direction: column;
   }
-  
+
   table {
     width: 98vw;
   }
-  
+
   #Zubereitung {
     width: 100vw;
   }

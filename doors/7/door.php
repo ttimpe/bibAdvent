@@ -1,3 +1,7 @@
+<?php
+define('DOOR', 7);
+include(dirname(__DIR__).'../../verify.php');
+?>
 <link href="https://fonts.googleapis.com/css?family=Changa+One" rel="stylesheet">
 <canvas id="c" width="1024" height="768">
 </canvas>

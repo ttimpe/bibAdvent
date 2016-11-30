@@ -1,4 +1,8 @@
-<!DOCTYPE HTML>
+<?php
+define('DOOR', 12);
+include(dirname(__DIR__).'../../verify.php');
+?>
+<!DOCTYPE html>
 <html lang="de">
 	<head>
 		<title>Schneemann</title>
@@ -13,18 +17,18 @@
 				margin: 0;
 				padding: 0;
 			}
-			
+
 			h1
 			{
 				font-family: 'Open Sans', sans-serif;
 			}
-			
+
 			#schneemann
 			{
 				transform-origin: bottom center;
 				animation: move 10s linear infinite;
 			}
-			
+
 			@keyframes move
 			{
 				0% {transform: rotate(0deg);}
@@ -33,13 +37,13 @@
 				75% {transform: rotate(-10deg);}
 				100% {transform: rotate(0deg);}
 			}
-			
+
 			@keyframes snow
 			{
 				0% {background-position: 0px 0px;}
 				100% {background-position: 500px 500px, 400px 400px, 300px 300px;}
 			}
-			
+
 			#headline
 			{
 				margin-top: 100px;
@@ -47,12 +51,12 @@
 				font-family: verdana, arial;
 				color: #cc0000;
 			}
-			
+
 			#schneemann
 			{
 				bottom: 140px;
 			}
-			
+
 			@media (max-width: 1500px)
 			{
 				#schneemann
@@ -60,7 +64,7 @@
 					bottom: 20px;
 				}
 			}
-			
+
 			@media (max-width: 500px)
 			{
 				#schneemann
@@ -68,16 +72,16 @@
 					bottom: 5px;
 				}
 			}
-			
+
 		</style>
 	</head>
-	
+
 	<body>
 		<h1 id="headline" align="center">Merry Christmas</h1>
-		
-		
-		
-		
+
+
+
+
 		<xml version="1.0" encoding="utf-8">
 <!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -111,21 +115,21 @@
 	<ellipse class="st2" cx="456.2" cy="553.7" rx="354.8" ry="122.3"/>
 </g>
 </svg>
-		
-                                                                                   
-                                                                                                    
-                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                      
-                                                                                                                                                               
-                                                                                           
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                           
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<svg width="10%" id="schneemann" height="213" id="snowman" style="min-width: 200px; position: absolute; left: 40%; ">
 		<defs>
     <style>
@@ -163,7 +167,7 @@
   <path id="Polygon_1" data-name="Polygon 1" class="cls-4" d="M521.558,644.966l18.589,27.951-25.778-15.089Z" transform="translate(-460 -602.656)"/>
   <path id="Scarf" class="cls-5" d="M468.742,679.333c-2.127,5.963-4.4,5.471,4.708,10.088s23.964,11.127,30.934,9.415,28.5-5.855,32.952-7.4c2.062-.713,15.895-4.037,8.07-11.432s-6.838-8.679-10.759-5.38-5.758,9.334-15.468,10.087a220,220,0,0,1-25.554,0C492.6,684.542,470.87,673.371,468.742,679.333Z" transform="translate(-460 -602.656)"/>
   <path id="Scarf2" class="cls-5" d="M513.127,693.456c2.888,10,4.5,21.271,5.38,14.122s11.557,11.872,8.742-3.362-3.246-12.669,0-16.14" transform="translate(-460 -602.656)"/>
-	
+
 	<defs>
     <style>
       .cls-1, .cls-2 {
@@ -177,15 +181,15 @@
       .cls-2 {
         fill: url(#linear-gradient-2);
       }
-	  
 
-	  
+
+
     </style>
-    
-	
+
+
 	</svg>
-	
-	
+
+
 
 	</body>
 </html>

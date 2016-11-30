@@ -1,3 +1,7 @@
+<?php
+define('DOOR', 6);
+include(dirname(__DIR__).'../../verify.php');
+?>
 <p>Drei Männer stehen in der Schlange zum Himmel.</p>
 
 <p>Zum ersten sagt Peter: „Du betrogst deine Frau nie, du darfst mit einem Ferrari im Himmel rumfahren!”, <br>so steigt er in das Auto und fährt durch die Tore.</p>

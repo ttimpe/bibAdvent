@@ -1,10 +1,14 @@
+<?php
+define('DOOR', 9);
+include(dirname(__DIR__).'../../verify.php');
+?>
 <!DOCTYPE HTML>
 <html lang="de">
 	<head>
 		<meta charset="utf-8">
 		<title>3D-Objekte</title>
 		<style>
-		
+
 			body
 			{
 				background-color: #1e1e1e;
@@ -12,14 +16,14 @@
 				background-repeat: no-repeat;
 				padding: 400px;
 			}
-			
+
 			.wrap
 			{
 				perspective: 1000px;
 				perspective-origin: 10% 0px;
 			}
-			
-			.cylinder 
+
+			.cylinder
 			{
 				transform-style: preserve-3d;
 				position: relative;
@@ -29,7 +33,7 @@
 				transform-origin: -5px 120px -200px;
 				animation: rotate_cyl 5s linear infinite;
 			}
-			
+
 			.cylinder div
 			{
 				width: 78.54px;
@@ -66,17 +70,17 @@
 				background-image: url('./Zahl.png');
 				background-position: -40px -20px;
 			}
-			
+
 			.top_cyl
 			{
 				transform: translate3d(-162px, -86px, -200px) rotateY(0deg) rotateX(-90deg);
-				
+
 			}
 
 			.bottom_cyl
 			{
 				transform: translate3d(-162px, -45px, -200px) rotateY(0deg) rotateX(-90deg);
-				
+
 			}
 
 
@@ -159,18 +163,18 @@
 			{
 				transform: translate3d(0px, 115px, 0px) rotateY(360deg) rotateX(0deg);
 			}
-			
+
 			@keyframes rotate_cyl
 			{
 				from {transform: rotateY(0deg) rotateX(91deg);}
 				to {transform: rotateY(1080deg) rotateX(91deg);}
 			}
 
-			
+
 		</style>
 	</head>
 	<body>
-		<div class="wrap">			
+		<div class="wrap">
 			<div class="cylinder">
 				<div class="top_cyl"></div>
 				<div class="bottom_cyl"></div>
@@ -190,7 +194,7 @@
 				<div class="side14_cyl"></div>
 				<div class="side15_cyl"></div>
 				<div class="side16_cyl"></div>
-			</div>	
-		</div>	
+			</div>
+		</div>
 	</body>
 </html>
