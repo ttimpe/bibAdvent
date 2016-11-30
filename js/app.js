@@ -1,5 +1,6 @@
 var openedDoor = 0;
 var doorOrder = [];
+var M = 11;
 $(document).ready(function() {
 
     if (document.cookie == '') {
@@ -13,9 +14,9 @@ $(document).ready(function() {
     }
     for (var i=0; i<doorOrder.length; i++) {
         var doorId = doorOrder[i];
-        d = new Date('2016-11-' + doorId);
+        d = new Date('2016-'+ M +'-' + doorId);
         if (doorId < 10) {
-            d = new Date('2016-11-0' + doorId);
+            d = new Date('2016-' + M + '-0' + doorId);
         }
 
         var currD = new Date();
