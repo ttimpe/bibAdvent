@@ -13,7 +13,12 @@ class Instrument {
     }
     stop() {
         console.log('Stopping');
-        this.oscs = null;
+        for (var i =0; i<this.oscs.length; i++) {
+
+            this.oscs[i].disconnect();
+
+        }
+        this.oscs = [];
         clearInterval(this.timer);
     }
 

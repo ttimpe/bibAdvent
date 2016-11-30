@@ -26,6 +26,7 @@ class Bass extends Instrument {
         var barLength = 60/player.BPM * 4;
 
         var osc1 = ac.createOscillator();
+        this.oscs.push(osc1);
         osc1.frequency.value = freq;
     //    osc1.detune.value = 10;
 

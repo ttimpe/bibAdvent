@@ -17,9 +17,12 @@ class BellSynth extends Instrument {
         var freq = Math.pow(tot, n.note-49) * 440;
         console.log('freq is ' + freq);
         var osc = ac.createOscillator();
+        this.oscs.push(osc);
+
         osc.frequency.value = freq;
         var barLength = 60/player.BPM * 4;
         osc.connect(this.volume);
+
         osc.start(ac.currentTime + (n.start*barLength));
         osc.stop(ac.currentTime + (n.start*barLength) + (n.length*barLength));
     }

@@ -12,6 +12,7 @@ class Mixer {
             console.log(e.target.height);
             k.style.bottom = (175 * (e.target.value / 100) + 8 + 25) + 'px';
         });
+        
 
     }
     addTrack(track) {
@@ -21,6 +22,8 @@ class Mixer {
         var trackFader = document.createElement('input');
         trackFader.setAttribute('type', 'range');
         trackFader.setAttribute('class', 'fader');
+        trackFader.setAttribute('orient', 'vertical');
+
 
 
         var trackFaderKnob = document.createElement('span');
@@ -44,6 +47,7 @@ class Mixer {
         trackFader.value = 80;
         track.instrument.volume.gain.value = 0.8;
 
+        trackFaderKnob.style.bottom = ((175 * 0.8) + 8 + 25) + 'px';
 
 
         var trackMuteButton = document.createElement('button');

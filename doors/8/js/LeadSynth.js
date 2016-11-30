@@ -31,6 +31,8 @@ class LeadSynth extends Instrument {
         osc2.type = 'triangle';
         osc2.detune.value = 10;
         var barLength = 60/player.BPM * 4;
+        this.oscs.push(osc1);
+        this.oscs.push(osc2);
 
         var g = ac.createGain();
         g.gain.setValueAtTime(0.1, (n.start*barLength) + (n.length*barLength) - 0.05);

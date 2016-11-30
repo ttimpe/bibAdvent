@@ -4,22 +4,26 @@
 
         {
             "type": "bass",
-            "patterns": ["bass_main"]
+            "patterns": ["bass_main"],
+            "muted": false
         },
 
         {
             "type": "bells",
-            "patterns": ["bells_main"]
+            "patterns": ["bells_main"],
+            "muted": true
         },
 
         {
             "type": "drums",
-            "patterns": ["drums_main"]
+            "patterns": ["drums_main"],
+            "muted": false
 
         },
         {
             "type": "synth",
-            "patterns": ["synth_main"]
+            "patterns": ["synth_main"],
+            "muted": true
         }
     ]
 
