@@ -102,7 +102,7 @@ gemahlene Nüsse mit in den Topf geben und zu einer glatten Masse verrühren.<br
 
     </table>
 <div class="beispiel">
-  <h3>Beispiel</h3>
+  <h3>Serviervorschlag</h3>
   <img src="pictures/Nussecke.jpg" id="ecke">
 </div>
 
