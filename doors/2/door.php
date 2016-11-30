@@ -1,3 +1,7 @@
+<?php
+define('DOOR', 2);
+include(dirname(__DIR__).'../../verify.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -49,7 +53,7 @@ z-index:-1;
   </head>
   <body>
 <div id="stars">
-<script scr="starfield.js">
+<script src="starfield.js">
 
         var container = document.getElementById('container');
         var starfield = new Starfield();
@@ -59,7 +63,7 @@ z-index:-1;
 
 </script>
     <div class="content">
-    <h1>Wir es dunkel vor dem Haus</h1>
+    <h1>Wird es dunkel vor dem Haus</h1>
     <p>
     Wird es dunkel vor dem Haus,<br>
     kommt zu uns der Nikolaus.<br>
