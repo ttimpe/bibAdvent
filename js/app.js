@@ -7,13 +7,17 @@ $(document).ready(function() {
             doorOrder.push(i);
         }
         doorOrder = shuffle(doorOrder);
-        document.cookie = JSON.stringify(doorOrder);
+        setCookie('doorOrder',JSON.stringify(doorOrder));
     } else {
-        doorOrder = JSON.parse(document.cookie);
+        doorOrder = JSON.parse(getCookie('doorOrder'));
     }
     for (var i=0; i<doorOrder.length; i++) {
         var doorId = doorOrder[i];
-        var d = new Date('2016-11-' + doorId);
+        d = new Date('2016-11-' + doorId);
+        if (doorId < 10) {
+            d = new Date('2016-11-0' + doorId);
+        }
+
         var currD = new Date();
         if (currD >= d) {
             // unlock door
@@ -36,6 +40,39 @@ $(document).ready(function() {
 
 });
 
+
+
+
+function setCookie(k, v) {
+    var cookies = getCookies();
+    cookies[k] = v;
+    var string = '';
+    console.log(cookies);
+    for (var key in cookies) {
+        string = key + '=' + cookies[key] + '; ' + string;
+    }
+    document.cookie = string;
+}
+
+function getCookies() {
+    var cookies = [];
+    var splitCookies = document.cookie.split('; ');
+    for (var i=0; i < splitCookies.length; i++) {
+        var s = splitCookies[i].split('=');
+        var k = s[0];
+        var v = s[1];
+        cookies[k] = v;
+    }
+    return cookies;
+}
+
+function getCookie(k) {
+    var cookies = getCookies();
+    if (cookies[k] !== undefined) {
+        return cookies[k];
+    }
+    return false;
+}
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
