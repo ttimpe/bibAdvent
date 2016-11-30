@@ -29,5 +29,6 @@
         </div>
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="js/app.js"></script>
+        <?php include('tracking.php');?>
     </body>
 </html>

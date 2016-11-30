@@ -1,3 +1,7 @@
+<?php
+define('DOOR', 4);
+include(dirname(__DIR__).'../../verify.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,9 +12,9 @@
     body{display: flex; flex-direction: column;}
 
     .center {text-align: center;}
-  
+
     .rot {color: red;}
-        
+
     </style>
 
   </head>
@@ -39,10 +43,7 @@
         Tannenzweige ★ Weihnachtsgeschenke<br>
         Schnee ★ Zimtsterne ★ Ruhe und Stille wäre schön!<br>
         HEILIGE<br>
-        NACHT        
+        NACHT
     </p>
   </body>
 </html>
-
-
-

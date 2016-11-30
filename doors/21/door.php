@@ -1,3 +1,7 @@
+<?php
+define('DOOR', 21);
+include(dirname(__DIR__).'../../verify.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>

@@ -1,3 +1,7 @@
+<?php
+define('DOOR', 3);
+include(dirname(__DIR__).'../../verify.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,7 +18,7 @@
     td{width: 50%;}
 
     h1,h2,h3{text-align: center;}
-        
+
     ol {
         padding-left: 20px;
     }
@@ -56,24 +60,21 @@
     <h2>Zubereitung</h2>
       <div id="zubereitung">
       <ol>
-          <li>Für den Teig die Eier trennen, die Eigelbe mit Zucker zerreiben bis die Masse weiß wird. Eiweiße steif schlagen.</li>    
+          <li>Für den Teig die Eier trennen, die Eigelbe mit Zucker zerreiben bis die Masse weiß wird. Eiweiße steif schlagen.</li>
           <li>Die Eigelbe mit dem Eiweiß verrühren, gut vermischen. Salz mit Mehl vermischen, in die Eiermilchmasse zugeben, zu einem
-              festen Teig verarbeiten. Den Teig mit einem feuchten Geschirrtuch zudecken und 15-20 Min. ruhen lassen.  
-          <li>Teig ausrollen und in dünne Nudeln schneiden.</li>   
-          <li>Den Butterschmalz erhitzen und die Nudeln darin goldbraun braten. Das Fett abtropfen und die Nudeln abkühlen lassen.</li>   
+              festen Teig verarbeiten. Den Teig mit einem feuchten Geschirrtuch zudecken und 15-20 Min. ruhen lassen.
+          <li>Teig ausrollen und in dünne Nudeln schneiden.</li>
+          <li>Den Butterschmalz erhitzen und die Nudeln darin goldbraun braten. Das Fett abtropfen und die Nudeln abkühlen lassen.</li>
           <li>Für die Sirupzubereitung in einem Kochtopf den Honig erhitzen, den Zucker hinzugeben,gut umrühren und zum Kochen bringen.Den Schaum abschöpfen und den Sirup paar Minuten kochen lassen bis der Zucker                       vollständig aufgelöst ist.</li>
-          <li>Für die Mohn-Nuss-Mischung den Mohn mit dem kochenden Wasser für 3 Min. einweichen, dann in einem Mörser zerdrücken.       
-              Mit zerkleinerten Nüssen vermischen und in einer zugedeckten Schüssel stehen lassen.(Optional)</li>      
+          <li>Für die Mohn-Nuss-Mischung den Mohn mit dem kochenden Wasser für 3 Min. einweichen, dann in einem Mörser zerdrücken.
+              Mit zerkleinerten Nüssen vermischen und in einer zugedeckten Schüssel stehen lassen.(Optional)</li>
               <li>Die gebratenen Nudeln in noch heißen Sirup geben, vermischen und die Mohn-Nuss-Mischung hinzugeben.
-              Den fertigen Chak-Chak in einen befetteten tiefen Teller geben, mit feuchten Händen zusammendrücken und ein Häufchen formen.</li>     
+              Den fertigen Chak-Chak in einen befetteten tiefen Teller geben, mit feuchten Händen zusammendrücken und ein Häufchen formen.</li>
           <li>Abkühlen lassen und in große Stücke schneiden.</li>
       </ol>
       </div>
     </div>
-    
+
 
   </body>
 </html>
-
-
-

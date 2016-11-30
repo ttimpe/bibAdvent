@@ -1,4 +1,5 @@
 <?php
+define('ADVENT', true);
 date_default_timezone_set('Europe/Berlin');
 switch ($_GET['action']) {
     case 'openDoor':
@@ -9,7 +10,9 @@ switch ($_GET['action']) {
             if ($currD >= $d) {
                 // set cookie
                 echo '<base href="doors/'.intval($_GET['day']).'/">';
+                include('tracking.php');
                 include('doors/'.intval($_GET['day']).'/door.php');
+
             } else {
                 // Locked 423
                 echo "Not so fast";

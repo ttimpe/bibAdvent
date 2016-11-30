@@ -1,4 +1,8 @@
-	<!DOCTYPE html>
+<?php
+define('DOOR', 5);
+include(dirname(__DIR__).'../../verify.php');
+?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
