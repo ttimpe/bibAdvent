@@ -100,14 +100,15 @@ function openDoor(i) {
     getInfoData(i);
     $('#frame-wrapper').addClass('opened');
 
+
+    $('#frame-wrapper').before('<div id="cover"></div>');
+    $('#cover').click (function(e) {
+        console.log(e.target);
+            closeDoor();
+
+    });
     openedDoor = i;
 
-    $('body').addClass('covered');
-    $('body.covered').click (function(e) {
-        if (e.target == document.body && openedDoor > 0) {
-            closeDoor();
-        }
-    });
 
 }
 
@@ -137,7 +138,7 @@ function closeDoor() {
         $('#frame-wrapper').removeClass('closed');
     },1000);
 
-    $('body').removeClass('covered');
+    $('#cover').remove();
     $('#door-content').attr('src', 'about:blank');
     openedDoor = 0;
 

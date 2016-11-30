@@ -21,7 +21,9 @@ switch ($_GET['action']) {
         break;
     case 'getDoorInfo':
     if (isset($_GET['day']) && intval($_GET['day']) > 0 && intval($_GET['day']) < 25) {
-        $info = json_decode(file_get_contents('doors/'.intval($_GET['day']).'/frame.json'), true);
+        $fPath = 'doors/'.intval($_GET['day']).'/frame.json';
+        $fData = file_get_contents($fPath);
+        $info = json_decode($fData, true);
         $githubData = array();
         $aContext = array(
             'http' => array(
