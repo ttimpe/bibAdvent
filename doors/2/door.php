@@ -55,7 +55,7 @@ z-index:-1;
 <div id="stars">
 <script src="starfield.js">
 
-        var container = document.getElementById('container');
+        var container = document.getElementById('stars');
         var starfield = new Starfield();
         starfield.initialise(container);
         starfield.start();
