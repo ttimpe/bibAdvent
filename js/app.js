@@ -1,6 +1,6 @@
 var openedDoor = 0;
 var doorOrder = [];
-var M = 11;
+var M = 12;
 $(document).ready(function() {
 
     if (document.cookie == '') {
