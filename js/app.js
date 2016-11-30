@@ -44,6 +44,12 @@ function openDoor(i) {
 function closeDoor() {
     console.log('closing door');
     $('#door-content').removeClass('opened');
+    $('#door-content').addClass('closed');
+    window.setTimeout(function() {
+        $('#door-content').removeClass('closed');
+    },1000);
+
     $('body').removeClass('covered');
+    $('#door-content').attr('src', 'about:blank');
 
 }
