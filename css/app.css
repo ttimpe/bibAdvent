@@ -71,7 +71,8 @@ html {
     border: 40px solid #476C2B;
     border-radius: 5px;
     display: none;
-    overflow: hidden;
+    overflow-x:hidden;
+    overflow-y: auto;
 
 }
 #door-content.opened {
