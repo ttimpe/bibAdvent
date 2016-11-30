@@ -32,7 +32,7 @@ function openDoor(i) {
 
     $('body').addClass('covered');
     $('body.covered').click (function(e) {
-        if (e.target == document.body) {
+        if (e.target == document.body && openedDoor > 0) {
             closeDoor();
         }
     });
@@ -51,5 +51,6 @@ function closeDoor() {
 
     $('body').removeClass('covered');
     $('#door-content').attr('src', 'about:blank');
+    openedDoor = 0;
 
 }
