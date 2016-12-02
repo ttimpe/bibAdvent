@@ -1,0 +1,12 @@
+{
+    "bpm": 115.3,
+    "instruments": [
+
+        {
+            "type": "arp_bass",
+            "patterns": ["bass_main"],
+            "muted": false
+        }
+    ]
+
+}
