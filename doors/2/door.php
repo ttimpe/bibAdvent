@@ -10,75 +10,78 @@ include(dirname(__DIR__).'../../verify.php');
     <title></title>
 
 <style type="text/css">
+@font-face {
+    font-family: 'english_scriptregular';
+    src: url('english_script-webfont.woff2') format('woff2'),
+         url('english_script-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-  .content{
-    text-align: center;
-    animation: xmas 2s alternate infinite;
-    animation-delay: 0s;
-    position:absolute;
-    width:100%;
-    background-color: #090954;
-  }
+}
+
 body{
-  background-color: #090954;
-  font-family: arial;
+  background: #000 url('bg.jpg');
+  background-size: cover;
+  color: white;
+  color: #fff;
+  font-family: Georgia;
+  font-size: 1.3em;
+
 }
-
-  @keyframes xmas {
-    0%{
-
-      color:red;
-    }
-100%{
-  color:green;
+article {
+    padding: 5% 10%;
+    line-height: 2em;
+    background: rgba(0,0,0,0.3);
 }
+h1 {
+    font-size: 3em;
+    font-family: 'english_scriptregular';
+    margin-bottom: 2em;
 
-  }
+}
 
   .autor{
     color:grey;
-    font-size: 7pt;
   }
 
   #stars{
 width: 100%;
 height: 100%;
 position: absolute;
-left: 0px;
-top:0px;
-z-index:-1;
+left: 0;
+top:0;
+z-index:100;
   }
 </style>
 
   </head>
   <body>
 <div id="stars">
-<script src="starfield.js">
-
-        var container = document.getElementById('stars');
-        var starfield = new Starfield();
-        starfield.initialise(container);
-        starfield.start();
-
-
-</script>
-    <div class="content">
-    <h1>Wird es dunkel vor dem Haus</h1>
+</div>
+<article>
+    <h1>Wird es dunkel vor dem Haus…</h1>
     <p>
     Wird es dunkel vor dem Haus,<br>
     kommt zu uns der Nikolaus.<br>
     Hat uns etwas mitgebracht,<br>
-    schöner als wir ja gedacht.
+    schöner als wir ja gedacht.<br>
   </p>
   <p>
     Steht der Baum im Lichterschein,<br>
     gehen wir zu Tür hinein.<br>
     Weihnacht, Weihnacht - es ist wahr,<br>
-    ist das schönste Fest im Jahr.
+    ist das schönste Fest im Jahr.<br>
   </p>
   <span class="autor">Autor: unbekannt</span>
-</div>
-  </div>
+</article>
+  <script src="starfield.js"></script>
+  <script>
+
+          var container = document.getElementById('stars');
+          var starfield = new Starfield();
+          starfield.initialise(container);
+          starfield.start();
+  </script>
   </body>
 
 
