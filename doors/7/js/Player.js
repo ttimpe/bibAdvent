@@ -18,7 +18,7 @@ class Player {
     }
     loadSong() {
         var that = this;
-        getJSON('songs/b8.json', function(status, data) {
+        getJSON('songs/lc.json', function(status, data) {
             that.song = data;
             for (var i=0; i<that.song.instruments.length; i++) {
                 switch (that.song.instruments[i].type) {
@@ -33,9 +33,9 @@ class Player {
                     track = new Track('Drums', inst);
                     mixer.addTrack(track);
                     break;
-                    case 'arp_bass':
+                    case 'bass':
                     var track;
-                    var inst = new ArpBass();
+                    var inst = new Bass();
                     inst.currentPattern = allPatterns[that.song.instruments[i].patterns[0]];
                     var patternName = that.song.instruments[i].patterns[0];
                     console.log('setting bass pattern to ' + patternName)
