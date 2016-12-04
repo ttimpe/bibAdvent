@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
-define('DOOR', 1);
+define('DOOR', 6);
 include(dirname(__DIR__).'../../verify.php');
 ?>
 <html>
 	<head>
-		<meta charset="utf-8"/>
+		<meta charset="utf-8">
 
 		<style type="text/css">
 			body {
