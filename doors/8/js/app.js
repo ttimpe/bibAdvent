@@ -5,7 +5,7 @@ var mixer;
 var player;
 
 
-var allPatternFiles = ['bass_main', 'bells_main', 'drums_main', 'drums_break', 'synth_main'];
+var allPatternFiles = ['bass_intro','arp_bass_main', 'bells_main', 'drums_main', 'drums_break', 'synth_main'];
 var allPatterns = [];
 var pIndex = 0;
 

@@ -1,10 +1,19 @@
 {
     "bpm": 115.3,
     "instruments": [
-
         {
-            "type": "arp_bass",
-            "patterns": ["bass_main"],
+            "type": "bass",
+            "patterns": ["bass_intro"],
+            "muted": false
+        },
+        {
+            "type":"bells",
+            "patterns": ["bells_main"],
+            "muted": false
+        },
+        {
+            "type":"arp_bass",
+            "patterns": ["arp_bass_main"],
             "muted": false
         }
     ]

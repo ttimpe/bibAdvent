@@ -33,15 +33,26 @@ class Player {
                     track = new Track('Drums', inst);
                     mixer.addTrack(track);
                     break;
-                    case 'arp_bass':
+                    case 'bass':
                     var track;
-                    var inst = new ArpBass();
+                    var inst = new Bass();
                     inst.currentPattern = allPatterns[that.song.instruments[i].patterns[0]];
                     var patternName = that.song.instruments[i].patterns[0];
                     console.log('setting bass pattern to ' + patternName)
                     console.log(allPatterns);
                     console.log(allPatterns[patternName]);
                     track = new Track('Bass', inst);
+                    mixer.addTrack(track);
+                    break;
+                    case 'arp_bass':
+                    var track;
+                    var inst = new ArpBass();
+                    inst.currentPattern = allPatterns[that.song.instruments[i].patterns[0]];
+                    var patternName = that.song.instruments[i].patterns[0];
+                    console.log('setting ArpBass pattern to ' + patternName)
+                    console.log(allPatterns);
+                    console.log(allPatterns[patternName]);
+                    track = new Track('Arp Bass', inst);
                     mixer.addTrack(track);
                     break;
                     case 'bells':
