@@ -35,11 +35,16 @@ $(document).ready(function() {
         showInfoData();
     });
     $("#closeInfoboxButton").click(function() {
-        $("#info-box").css('display', 'none');
-    })
+        closeInfobox();
+    });
 
 
 });
+
+function closeInfobox() {
+    $("#info-box").css('display', 'none');
+
+}
 
 
 
@@ -133,6 +138,7 @@ function showInfoData() {
 
 function closeDoor() {
     console.log('closing door');
+    closeInfobox();
     $('#frame-wrapper').removeClass('opened');
     $('#frame-wrapper').addClass('closed');
     window.setTimeout(function() {
