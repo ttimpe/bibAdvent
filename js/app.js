@@ -3,7 +3,7 @@ var doorOrder = [];
 var M = 12;
 $(document).ready(function() {
 
-    if (document.cookie == '') {
+    if (getCookie('doorOrder') == '') {
         for (var i=1; i<25; i++)  {
             doorOrder.push(i);
         }

@@ -1,5 +1,6 @@
 {
     "bpm": 115.3,
+    "title": "Heile die Welt (TAPE 8)",
     "instruments": [
         {
             "type": "bass",
@@ -14,6 +15,11 @@
         {
             "type":"arp_bass",
             "patterns": ["arp_bass_main"],
+            "muted": false
+        },
+        {
+            "type":"drums",
+            "patterns": ["drums_main"],
             "muted": false
         }
     ]

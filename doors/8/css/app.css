@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'fm1regular';
+    src: url('../fonts/fm1-webfont.woff2') format('woff2'),
+         url('../fonts/fm1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 * { margin: 0; padding:0;}
 
 .rack {
@@ -39,6 +47,11 @@ input[type=range]
     height: 256px;
 }
 
+#song-tracks {
+    height: 100%;
+    float: left;
+}
+
 .track {
     width: 150px;
     float:left;
@@ -73,46 +86,93 @@ input[type=range]
 .fader-knob {
     height: 30px;
     width: 16px;
-    background: linear-gradient(#d5d5d5 1px,
-                                #d4d4d4 2px,
-                                #bebebe 3px,
-                                #c5c5c5 4px,
-                                #9a9a9a 5px,
-                                #616161 6px,
-                                #696969 7px,
-                                #858585 8px,
-                                #909090 9px,
-                                #8c8c8c 10px,
-                                #8a8a8a 11px,
-                                #9c9c9c,12px,
-                                #b8b8b8 13px,
-                                #c9c9c9 14px,
-                                #bbbbbb 15px,
-                                #313131 16px,
-                                #c5c5c5 17px,
-                                #cecece 18px,
-                                #aaaaaa 19px,
-                                #b0b0b0 20px,
-                                #cccccc 21px,
-                                #b0b0b0 22px,
-                                #aeaeae 23px,
-                                #d1d1d1 24px,
-                                #b9b9b9 25px,
-                                #818181 26px,
-                                #6a6a6a 27px,
-                                #686868 28px,
-                                #676767 29px,
-                                #3f3f3f 30px,
+    background: linear-gradient(hsl(0, 0%, 84%) 1px,
+                                hsl(0, 0%, 83%) 2px,
+                                hsl(0, 0%, 75%) 3px,
+                                hsl(0, 0%, 77%) 4px,
+                                hsl(0, 0%, 60%) 5px,
+                                hsl(0, 0%, 38%) 6px,
+                                hsl(0, 0%, 41%) 7px,
+                                hsl(0, 0%, 52%) 8px,
+                                hsl(0, 0%, 56%) 9px,
+                                hsl(0, 0%, 55%) 10px,
+                                hsl(0, 0%, 54%) 11px,
+                                hsl(0, 0%, 61%) 12px,
+                                hsl(0, 0%, 72%) 13px,
+                                hsl(0, 0%, 79%) 14px,
+                                hsl(0, 0%, 73%) 15px,
+                                hsl(0, 0%, 19%) 16px,
+                                hsl(0, 0%, 77%) 17px,
+                                hsl(0, 0%, 81%) 18px,
+                                hsl(0, 0%, 67%) 19px,
+                                hsl(0, 0%, 69%) 20px,
+                                hsl(0, 0%, 80%) 21px,
+                                hsl(0, 0%, 69%) 22px,
+                                hsl(0, 0%, 68%) 23px,
+                                hsl(0, 0%, 81%) 24px,
+                                hsl(0, 0%, 73%) 25px,
+                                hsl(0, 0%, 51%) 26px,
+                                hsl(0, 0%, 42%) 27px,
+                                hsl(0, 0%, 41%) 28px,
+                                hsl(0, 0%, 40%) 29px,
+                                hsl(0, 0%, 25%) 30px,
                                 #000);
     cursor: pointer;
     border-radius: 0;
     border:0;
     display: block;
     bottom:80%;
-    left: 26px;
+    left: 30px;
     position: absolute;
     z-index: 20;
 
+}
+
+.master-track .fader {
+    left: 59px;
+}
+
+.master-track .fader-knob {
+    background: linear-gradient(hsl(0, 100%, 84%) 1px,
+                                hsl(0, 100%, 83%) 2px,
+                                hsl(0, 100%, 75%) 3px,
+                                hsl(0, 100%, 77%) 4px,
+                                hsl(0, 100%, 60%) 5px,
+                                hsl(0, 100%, 38%) 6px,
+                                hsl(0, 100%, 41%) 7px,
+                                hsl(0, 100%, 52%) 8px,
+                                hsl(0, 100%, 56%) 9px,
+                                hsl(0, 100%, 55%) 10px,
+                                hsl(0, 100%, 54%) 11px,
+                                hsl(0, 100%, 61%) 12px,
+                                hsl(0, 100%, 72%) 13px,
+                                hsl(0, 100%, 79%) 14px,
+                                hsl(0, 100%, 73%) 15px,
+                                hsl(0, 100%, 100%) 16px,
+                                hsl(0, 100%, 77%) 17px,
+                                hsl(0, 100%, 81%) 18px,
+                                hsl(0, 100%, 67%) 19px,
+                                hsl(0, 100%, 69%) 20px,
+                                hsl(0, 100%, 80%) 21px,
+                                hsl(0, 100%, 69%) 22px,
+                                hsl(0, 100%, 68%) 23px,
+                                hsl(0, 100%, 81%) 24px,
+                                hsl(0, 100%, 73%) 25px,
+                                hsl(0, 100%, 51%) 26px,
+                                hsl(0, 100%, 42%) 27px,
+                                hsl(0, 100%, 41%) 28px,
+                                hsl(0, 100%, 40%) 29px,
+                                hsl(0, 100%, 25%) 30px,
+                                #000);
+    left: 64px;
+}
+.master-track .track-label {
+    background: rgba(0,0,0,0);
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    letter-spacing: 1px;
 }
 
 .fader::-webkit-slider-thumb {
@@ -233,8 +293,9 @@ input[type=range]
     line-height: 60px;
     background: white;
     font-family: 'Comic Sans MS';
-    font-size: 24px;
+    font-size: 18px;
     box-shadow: 0px 0px 3px inset;
+    text-transform: uppercase;
 }
 
 
@@ -296,4 +357,27 @@ input[type=range]
 }
 #player-container .transport-container li:last-child {
     width: 60px;
+}
+.display-container {
+    color: cyan;
+    font-family: 'fm1regular';
+    padding-top: 12px;
+}
+.display-line {
+    width: 40%;
+    padding: 0 30%;
+    text-align: right;
+    display: block;
+    font-size: 1.8em;
+    line-height: 1.1em;
+}
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+}
+.display-line.blinking {
+    animation: blink 1s step-start 0s infinite;
+
 }

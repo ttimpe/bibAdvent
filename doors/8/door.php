@@ -15,9 +15,12 @@ include(dirname(__DIR__).'../../verify.php');
 <body>
     <main class="rack">
 <div id="mixer-container">
+    <div id="song-tracks">
+    </div>
     <section class="track master-track">
         <span class="fader-knob" style="bottom: 178px;"></span>
     <input type="range" id="masterFader" class="fader" orient="vertical" value="80">
+    <span class="track-label">MASTER</span>
     </div>
 </div>
 <div id="player-container">
@@ -35,8 +38,10 @@ include(dirname(__DIR__).'../../verify.php');
         <li><button>8</button></li>
     </ul>
 
-    <div class="tape-slot"><div class="tape"><span class="tape-label">WUSSTEN SIE? (TAPE 8)</span></div></div>
+    <div class="tape-slot"><div class="tape"><span class="tape-label"></span></div></div>
     <div class="display-container">
+        <span class="display-line">LOADING</span>
+        <span class="display-line">SONG</span>
     </div>
     <ul class="transport-container">
         <li><button id="rewindButton">REWIND</button><span><i class="fa fa-backward" aria-hidden="true"></i></span></li>

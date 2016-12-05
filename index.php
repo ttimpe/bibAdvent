@@ -21,4 +21,4 @@ include 'header.php'; ?>
         	<button id="closeInfoboxButton"><i class="fa fa-window-close-o" aria-hidden="true"></i></button>
         </div>
 <?php include 'footer.php'; ?>
-<script src="js/app.min.js"></script>
+<script src="js/app.js"></script>
