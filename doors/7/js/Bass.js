@@ -14,6 +14,7 @@ class Bass extends Instrument {
                 inst.playNote(inst.currentPattern[i]);
             }
         }, patternLength * 1000);
+        
 
 
     }

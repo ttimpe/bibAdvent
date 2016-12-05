@@ -27,7 +27,7 @@ function init() {
         // SET UP INSTRUMENTS
         ac = new AudioContext();
 
-    mixer = new Mixer(document.getElementById('mixer-container'));
+    mixer = new Mixer(document.getElementById('song-tracks'));
     player = new Player();
 
 

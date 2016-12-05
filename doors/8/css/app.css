@@ -179,9 +179,11 @@ input[type=range]
     -webkit-appearance: none;
     background: transparent;
 }
-.fader::-webkit-runnable-track {
-    background: black;
+.fader::-webkit-slider-runnable-track {
+    background: #333;
     z-index: 10;
+    width: 5px;
+    border:0;
 }
 
 
