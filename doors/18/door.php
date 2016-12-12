@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+define('DOOR', 18);
+include(dirname(__DIR__).'../../verify.php');
+?>
+
 <html>
 <head>
 	<title>Kalendertür 18</title>
