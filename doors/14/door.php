@@ -11,5 +11,6 @@
     </head>
     <body>
         <div id="gc"></div>
+        <div style="width: 100%, text-align: center"><h1>Highly recommended to visit door #13 first!</h1></div>
     </body>
 </html>
