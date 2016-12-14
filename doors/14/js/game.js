@@ -552,9 +552,9 @@ var mainState = {
         //slide
         else if(cursor.down.isDown && santa.body.onFloor()){
             if(santaFacing == 'facingRight'){
-                santa.body.velocity.x = 2000;
+                santa.body.velocity.x = 200;
             }else{
-                santa.body.velocity.x = -2000;
+                santa.body.velocity.x = -200;
             }
             santa.animations.play('santaSlide');
             //santa.body.setSize(santa.width, santaSlideHeight);
