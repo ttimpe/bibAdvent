@@ -1,0 +1,12 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: black;
+	font-family: 'BeyondWonderland';
+}
+@font-face{
+	font-family: 'BeyondWonderland';
+	src: url('media/fonts/Beyond Wonderland.ttf') format('truetype');
+}
