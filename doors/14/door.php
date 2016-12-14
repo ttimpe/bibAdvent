@@ -11,6 +11,6 @@
     </head>
     <body>
         <div id="gc"></div>
-        <div style="width: 100%, text-align: center"><br><h1 style="color: white, text-align: center">Highly recommended to visit door #13 first!</h1></div>
+        <div style="width: 100%; text-align: center"><br><h1 style="color: white; text-align: center">Highly recommended to visit door #13 first!</h1></div>
     </body>
 </html>
