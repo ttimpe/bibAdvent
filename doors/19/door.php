@@ -26,7 +26,7 @@ include(dirname(__DIR__).'../../verify.php');
 			{border: 1px solid black;}
 
 		</style>
-				<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 				<script src="jquery.hotkeys.js"></script>
 				<script src="sprite.js"></script>
 	</head>
