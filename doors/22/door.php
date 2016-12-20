@@ -1,18 +1,23 @@
 <?php
 define('DOOR', 22);
-include(dirname(__DIR__).'../../verify.php');
-?>
-<!DOCTYPE html>
+include(dirname(__DIR__).'../../verify.php'); ?>
+
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Christmas</title>
-    <link rel="stylesheet" href="CSS/style.css" title="no title" charset="utf-8">
-    <script src="JS/script.js" type="text/javascript"></script>
-  </head>
-  <body>
-    <section class="xmas">
-      <canvas id="xmas"></canvas>
-    </section>
-  </body>
+	<head>
+		<title>Merry Christmas!</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/javascript.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<section class="xmas">
+			<div class="xmas-message"></div>
+			<canvas id="xmas"></canvas>
+		</section>
+
+
+
+		<script>
+
+		</script>
+	</body>
 </html>
