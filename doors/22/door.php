@@ -1,6 +1,6 @@
 <?php
-define('DOOR', 22);
-include(dirname(__DIR__).'../../verify.php'); ?>
+//define('DOOR', 22);
+//include(dirname(__DIR__).'../../verify.php'); ?>
 
 <html>
 	<head>
