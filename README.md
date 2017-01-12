@@ -20,7 +20,7 @@ Türen
 | ---------- | ------- |
 | Fabian K.  |  1 &  2 |
 | Ruslan M.  |  3 &  4 |
-| Stefan W.  |  5 &  6 |
+| @StW96     |  5 &  6 |
 | Tobias T.  |  7 &  8 |
 | Timo S.    |  9 & 10 |
 | Florian K. | 11 & 12 |
